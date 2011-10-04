@@ -7,26 +7,12 @@ fi
 
 # User specific aliases and functions
 
-# XXX This is a hack to get the locally-installed perl to be used in
-# .bashrc, which ensures that the right @INC is set.
-# Example of Perl module installs on teebox:
-# $ perldoc -l local::lib
-# /home/tstanton/localperl/lib/site_perl/5.12.1/local/lib.pm
-# $ perldoc -l App::cpanminus
-# /home/tstanton/localperl/lib/site_perl/5.12.1/App/cpanminus.pm
-# $ perldoc -l Moose
-# /home/tstanton/perl5/lib/perl5/i686-linux/Moose.pm
-if [ -d "$HOME/localperl" ]; then
-    alias perl="$HOME/localperl/bin/perl"
-fi;
-# TODO Check that local::lib is available
-if [ -d "$HOME/perl5" ]; then
-    eval $(perl -Mlocal::lib)
-fi
-# Undo perl aliasing
-alias perl >/dev/null 2>&1
-if (( $? == 0 )); then
-    unalias perl
+# Use perlbrew for a locally-installed perl (see
+# http://beta.metacpan.org/module/App::perlbrew)
+# Modules inside the chosen perl's directory in ~/perl5/perlbrew/ do not
+# require local::lib
+if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
+    source $HOME/perl5/perlbrew/etc/bashrc
 fi;
 
 # ex. Do 'perl-inc -Mlib::core::only' to see how @INC is affected
