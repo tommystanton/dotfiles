@@ -1,0 +1,25 @@
+[user]
+	name = Tommy Stanton
+	email = tommystanton@gmail.com
+[color]
+	branch = always
+	status = always
+	diff = auto
+[color "diff"]
+	whitespace = red reverse
+[core]
+	editor = /usr/bin/env vim
+	pager = less -FRX
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[branch]
+	autosetupmerge = true
+[alias]
+	l = log --pretty=oneline --abbrev-commit
+	ls = ls-tree --name-only -r HEAD
+[diff "odf"]
+	textconv = odt2txt
+[diff "doc"]
+	textconv = catdoc

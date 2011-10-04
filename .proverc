@@ -1,0 +1,4 @@
+# Show tests individually
+-v
+# Make sure STDERR and STDOUT are printed in the correct order
+--merge

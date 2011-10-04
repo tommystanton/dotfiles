@@ -1,0 +1,6 @@
+--perl-best-practices
+
+--maximum-line-length=72 # Use the same value as my textwidth in vim
+
+--minimum-space-to-comment=1
+--noblanks-before-comments

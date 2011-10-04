@@ -1,0 +1,4 @@
+--pager=less -R
+
+# Mason template files should be considered as Perl files
+--type-add=perl=.mason
