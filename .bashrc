@@ -94,7 +94,7 @@ dirs () {
 pushd () {
     # Don't let the builtin print the builtin dirs output (but error
     # messages via STDERR are okay)
-    builtin pushd $@ > /dev/null
+    builtin pushd "$@" > /dev/null
 
     # If there was no error (and no error message)
     if (( $? == 0 )); then
