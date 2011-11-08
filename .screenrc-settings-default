@@ -1,3 +1,5 @@
+shell -bash
+
 # Use "`" instead of CTRL-a
 escape `~
 
