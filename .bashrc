@@ -115,6 +115,9 @@ pop () {
 }
 # XXX Use 'popd' without arguments to pop off the "top" (first)
 # directory
+cd () {
+    builtin cd "$@" && dirs
+}
 
 termsize () {
     echo "Your terminal size is: $(tput cols)x$(tput lines)"
