@@ -134,3 +134,5 @@ export named=/etc/named.conf pri_dir=/var/named/chroot/var/named
 #echo -e "\E[0;32m";
 #cat ./.bash_logo;
 #tput sgr0;
+
+. $HOME/.bashrc.load
