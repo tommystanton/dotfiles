@@ -6,3 +6,9 @@ export PATH=$PATH:$HOME/bin
 
 ####
 # put any bash customizations in here
+
+# Usually Debian flavors of GNU/Linux (ie. Ubuntu) have lots of custom
+# shell config that I haven't incorporated into the main bashrc yet
+if [ -f /etc/debian_version ]; then
+    . $HOME/.backup/.bashrc
+fi
