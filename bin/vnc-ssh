@@ -2,8 +2,8 @@
 # Usage: $ vnc-ssh [SSH_OPTIONS] USER@HOST
 
 # You can use an SSH tunnel (to get to 103, in this ex.) like so:
-# $ ssh -L 10110:192.168.1.103:22 -N remote_user@host.com
-# $ vnc-ssh -p 10110 local_user@localhost
+# $ ssh -L 10110:192.168.1.103:22 -N remote_user@example.com
+# $ vnc-ssh -p 10110 remote_user@localhost
 
 ssh -f -L 5900:localhost:5900 "$@" \
     x11vnc -safer -localhost -nopw -once \
