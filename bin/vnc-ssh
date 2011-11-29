@@ -1,15 +1,20 @@
-#!/bin/sh
-# Usage: $ vnc-ssh [SSH_OPTIONS] USER@HOST
+#!/bin/bash
 
-# You can use an SSH tunnel (to get to 103, in this ex.) like so:
-# $ ssh -L 10110:192.168.1.103:22 -N remote_user@example.com
-# $ vnc-ssh -p 10110 remote_user@localhost
+if [[ -z "$@" || "$@" == *help ]]; then
+    cat - <<EOF
+Usage: $ vnc-ssh [SSH_OPTIONS] USER@HOST
 
-ssh -f -L 5900:localhost:5900 "$@" \
-    x11vnc -safer -localhost -nopw -once \
-        -nomodtweak \
-        -display :0 \
-    && sleep 2 \
-    && vncviewer -encodings 'tight copyrect' \
-        -quality 5 -compresslevel 9 \
-        localhost:0
+You can use an SSH tunnel (to get to 103, in this ex.) like so:
+$ ssh -L 10110:192.168.1.103:22 -N remote_user@example.com
+$ vnc-ssh -p 10110 remote_user@localhost
+EOF
+else
+    ssh -f -L 5900:localhost:5900 "$@" \
+        x11vnc -safer -localhost -nopw -once \
+            -nomodtweak \
+            -display :0 \
+        && sleep 2 \
+        && vncviewer -encodings 'tight copyrect' \
+            -quality 5 -compresslevel 9 \
+            localhost:0
+fi
