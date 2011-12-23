@@ -1,0 +1,9 @@
+#!/bin/sh
+
+date +%Y%m%d
+
+## Perl equivalent:
+## TODO Consider DateTimeX::Lite
+#   use DateTime;
+#   my $dt = DateTime->now->set_time_zone('local');
+#   print $dt->ymd(q{}); # ie. "20090706"
