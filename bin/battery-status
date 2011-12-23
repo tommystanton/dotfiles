@@ -1,0 +1,3 @@
+#!/bin/sh
+
+for ((;;)); do acpi; sleep 3; clear; done
