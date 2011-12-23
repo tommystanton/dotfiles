@@ -135,7 +135,10 @@ export named=/etc/named.conf pri_dir=/var/named/chroot/var/named
 #cat ./.bash_logo;
 #tput sgr0;
 
-. $HOME/.bashrc.load
+# Load original shell settings from the distribution
+if [ -f $HOME/.bashrc.load ]; then
+    . $HOME/.bashrc.load
+fi
 
 # XXX Override PS1 to be the basic Redhat-style
 export PS1="[\u@\h \W]\$ "
