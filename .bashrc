@@ -136,3 +136,6 @@ export named=/etc/named.conf pri_dir=/var/named/chroot/var/named
 #tput sgr0;
 
 . $HOME/.bashrc.load
+
+# XXX Override PS1 to be the basic Redhat-style
+export PS1="[\u@\h \W]\$ "
