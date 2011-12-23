@@ -1,0 +1,3 @@
+#!/bin/sh
+# Force GNU Emacs into terminal-mode
+exec /usr/bin/emacs -nw "$@"
