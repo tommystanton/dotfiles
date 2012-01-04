@@ -108,13 +108,6 @@ termsize () {
     echo "Your terminal size is: $(tput cols)x$(tput lines)"
 }
 
-# PATHS FOR FOLDERS
-#export log_screen=$HOME/log-screen
-export log_screen=$HOME/log/screen
-export ec_repos=$HOME/eulandchina.com/svn ts_repos=$HOME/tommystanton.com/svn
-export httpd=/etc/httpd/conf/httpd.conf
-export named=/etc/named.conf pri_dir=/var/named/chroot/var/named
-
 ## FIXME Messes up scp & sftp
 #echo -e "\E[0;32m";
 #cat ./.bash_logo;
