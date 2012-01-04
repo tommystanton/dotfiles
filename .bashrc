@@ -30,14 +30,6 @@ perl-trace () {
     perl -Mdiagnostics=-traceonly $@
 }
 
-## FIXME Doesn't quite work as intended, the log ends up being
-## literally: "$ !#:3-6"
-#cpan-commit () {
-#    if [ -d $HOME/perl5 ]; then
-#        cd $HOME/perl5 && cpanm -L ~/perl5/ $1 && git add . && git commit -m "\$ !#:3-6"
-#    fi
-#}
-
 alias grep='grep --color' # Highlight the search for grep in red
 
 ## FIXME
