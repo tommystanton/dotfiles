@@ -108,11 +108,6 @@ termsize () {
     echo "Your terminal size is: $(tput cols)x$(tput lines)"
 }
 
-## FIXME Messes up scp & sftp
-#echo -e "\E[0;32m";
-#cat ./.bash_logo;
-#tput sgr0;
-
 # Load original shell settings from the distribution
 if [ -f $HOME/.bashrc.load ]; then
     . $HOME/.bashrc.load
