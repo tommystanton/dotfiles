@@ -53,7 +53,7 @@ export TMPDIR='/tmp'
 # $ mv -v "my file" $(to_underscores !#:2)
 # mv -v "my file" $(to_underscores "my file")
 # `my file' -> `my_file'
-# TODO Consider http://search.cpan.org/dist/String-MFN/
+# TODO Consider https://metacpan.org/release/String-MFN
 to_underscores () {
     echo "$1" | perl -pe '$_ =~ s/\s*([:-])\s*/$1/g; $_ =~ s/ /_/g;'
 }
