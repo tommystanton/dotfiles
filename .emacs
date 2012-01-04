@@ -4,6 +4,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(fill-column 72)
  '(menu-bar-mode t)
  '(save-place t nil (saveplace))
  '(size-indication-mode t)
