@@ -103,5 +103,5 @@ if [ -f $HOME/.bashrc.load ]; then
     . $HOME/.bashrc.load
 fi
 
-# XXX Override PS1 to be the basic Redhat-style
+# Force shell prompt to be the basic Red Hat style
 export PS1="[\u@\h \W]\$ "
