@@ -60,12 +60,12 @@ which-pkg () {
     apt-file -x search "bin/$1\$"
 }
 
-### Override dirs, along with its related functions ###
 dirs () {
     # Perl one-liner time...this was cooked up during my presentation at
     # Los Angeles Perl Mongers on 11/4/2009.
     builtin dirs -p | perl -pe '$_ = $. - 1 . q{ } . $_'
 }
+
 pushd () {
     # Don't let the builtin print the builtin dirs output (but error
     # messages via STDERR are okay)
@@ -77,19 +77,20 @@ pushd () {
         dirs
     fi
 }
+
 popd () {
     builtin popd $@ > /dev/null
     if (( $? == 0 )); then
         dirs
     fi
 }
-### Custom dirs-related functions ###
-# Pop off a directory from the end of the dirs stack
+
 pop () {
     popd -0
 }
-# XXX Use 'popd' without arguments to pop off the "top" (first)
-# directory
+
+# (Use 'popd' without arguments to pop off the "top" [first] directory)
+
 cd () {
     builtin cd "$@" && dirs
 }
