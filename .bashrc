@@ -35,15 +35,7 @@ alias grep='grep --color' # Highlight the search for grep in red
 ## FIXME
 #alias svn_commit='svn commit --editor-cmd \'vim -c "set wrap" -c "set lbr"\''
 
-# From Tim Bunce on revision 5035 at TigerLead:
-# ignore case in search unless search include upper case chars
-# From me:
-# Always enable ANSI "color" escape sequences (for , and colored output,
-# for ex.)
-# Tip: it is sometimes helpful to view terminal logs (from programs like
-# GNU screen and script) with 'less -r LOG_FILE'
-# --force is used to surpress the '... may be a binary file.  See it
-# anyway?' warning.
+# Shell variable used by less(1), for configuration
 export LESS='--ignore-case --RAW-CONTROL-CHARS --force'
 
 # For lynx
