@@ -98,9 +98,10 @@ termsize () {
     echo "Your terminal size is: $(tput cols)x$(tput lines)"
 }
 
-# Load original shell settings from the distribution
-if [ -f $HOME/.bashrc.load ]; then
-    . $HOME/.bashrc.load
+# (Load original shell settings from the distribution)
+dfm_bashrc_loader="$HOME/.bashrc.load"
+if [ -f "$dfm_bashrc_loader" ]; then
+    . "$dfm_bashrc_loader"
 fi
 
 # Force shell prompt to be the basic Red Hat style
