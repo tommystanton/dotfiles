@@ -38,13 +38,6 @@ perl-trace () {
 #    fi
 #}
 
-# LS SHORTCUTS
-alias la='ls -AF' # "list all"
-alias ll='ls -lF' # "list long"
-alias lla='ls -lAF' # "list long all"
-alias lc='ls -1F' # "list column"
-alias lca='ls -1AF' # "list column all"
-
 alias grep='grep --color' # Highlight the search for grep in red
 
 ## FIXME
