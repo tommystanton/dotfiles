@@ -11,9 +11,10 @@ fi
 # http://beta.metacpan.org/module/App::perlbrew)
 # Modules inside the chosen perl's directory in ~/perl5/perlbrew/ do not
 # require local::lib
-if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
-    source $HOME/perl5/perlbrew/etc/bashrc
-fi;
+perlbrew_bashrc="$HOME/perl5/perlbrew/etc/bashrc"
+if [ -f "$perlbrew_bashrc" ]; then
+    source "$perlbrew_bashrc"
+fi
 
 # ex. Do 'perl-inc -Mlib::core::only' to see how @INC is affected
 perl-inc () {
