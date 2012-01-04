@@ -32,9 +32,6 @@ perl-trace () {
 
 alias grep='grep --color' # Highlight the search for grep in red
 
-## FIXME
-#alias svn_commit='svn commit --editor-cmd \'vim -c "set wrap" -c "set lbr"\''
-
 # Shell variable used by less(1), for configuration
 export LESS='--ignore-case --RAW-CONTROL-CHARS --force'
 
