@@ -1,0 +1,14 @@
+set nonu " No line numbers
+set nolist " No indicators of spacing
+set nofoldenable " Get rid of folding!
+
+" Assume that code is Perl, and run it in the debugger
+map DD :!perl -d %<CR>
+
+" Also let arrow keys control slides
+map <Right> :n<CR>:<CR>gg
+map <Left> :N<CR>:<CR>gg
+"" FIXME Doesn't work as intended
+"" Up goes to first slide, down goes to last
+"map <Up> :bfirst<CR>
+"map <Down> :blast<CR>
