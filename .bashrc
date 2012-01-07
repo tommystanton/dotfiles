@@ -16,18 +16,18 @@ if [ -f "$perlbrew_bashrc" ]; then
     source "$perlbrew_bashrc"
 fi
 
-# ex. Do 'perl-inc -Mlib::core::only' to see how @INC is affected
-perl-inc () {
+# ex. Do 'perl_inc -Mlib::core::only' to see how @INC is affected
+perl_inc () {
     perl $1 -e 'for (@INC) { print "$_\n"; }'
 }
 
 # Get the $VERSION of a Perl CPAN module
-perl-pmver () {
+perl_pmver () {
     perl -M$1 -e "print \$$1::VERSION, \"\n\""
 }
 
 # Do a stack trace via diagnostics.pm
-perl-trace () {
+perl_trace () {
     perl -Mdiagnostics=-traceonly $@
 }
 
@@ -50,11 +50,11 @@ to_underscores () {
 
 # Returns the package name that gives an exact program
 # Usage:
-# $ which-pkg convert
+# $ which_pkg convert
 # graphicsmagick-imagemagick-compat: /usr/bin/convert
 # imagemagick: /usr/bin/convert
 # imagemagick-dbg: /usr/lib/debug/usr/bin/convert
-which-pkg () {
+which_pkg () {
     # TODO Check for whether the system has apt or yum--if yum, use
     # $ yum whatprovides "*bin/$1"
     apt-file -x search "bin/$1\$"
