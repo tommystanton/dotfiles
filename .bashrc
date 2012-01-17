@@ -36,6 +36,9 @@ alias grep='grep --color' # Highlight the search for grep in red
 # Shell variable used by less(1), for configuration
 export LESS='--ignore-case --RAW-CONTROL-CHARS --force'
 
+# Subversion config
+export SVN_EDITOR='/usr/bin/env vim'
+
 # For lynx
 export TMPDIR='/tmp'
 
