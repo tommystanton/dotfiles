@@ -16,6 +16,14 @@ if [ -f "$perlbrew_bashrc" ]; then
     source "$perlbrew_bashrc"
 fi
 
+# Use local::lib for locally-installed CPAN modules (usually used when
+# perlbrew is not being used)
+if [ -d "$HOME/perl5/lib/perl5" ]; then
+    if [ $(which perl) == '/usr/bin/perl' ]; then
+        eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+    fi
+fi
+
 # ex. Do 'perl_inc -Mlib::core::only' to see how @INC is affected
 perl_inc () {
     perl $1 -e 'for (@INC) { print "$_\n"; }'
