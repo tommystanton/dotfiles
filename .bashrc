@@ -117,4 +117,13 @@ if [ -f "$dfm_bashrc_loader" ]; then
 fi
 
 # Force shell prompt to be the basic Red Hat style
-export PS1="[\u@\h \W]\$ "
+# ...plus PipTime ;)
+# http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
+hash pt 2>&- && \
+    export PROMPT_COMMAND='export PIPTIME="$(pt) "'
+## TODO Get ANSI escape sequences to work in $PS1
+## Print PipTime in color (there is a bug with 'pt -c'):
+## $ perl -MTime::PT -e "print Time::PT->new->color(q{ANSI}), qq{\033[0m}"
+#export PROMPT_COMMAND='export PIPTIME=$(perl -MTime::PT -e "print Time::PT->new->color(q{ANSI})" && echo -e "\033[0m\]")'
+#export PROMPT_COMMAND='export PIPTIME=$(perl -MTime::PT -e "print Time::PT->new->color(q{ANSI})")'
+export PS1='[\u@\h ${PIPTIME}\W]\$ '
