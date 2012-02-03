@@ -118,3 +118,10 @@ fi
 
 # Force shell prompt to be the basic Red Hat style
 export PS1="[\u@\h \W]\$ "
+
+if hash pt 2>/dev/null; then
+    export PROMPT_COMMAND='export PIPTIME="$(pt)"'
+    export PS1='[${PIPTIME} \W/]\$ '
+fi
+
+export PATH
