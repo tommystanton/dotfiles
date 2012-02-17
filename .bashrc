@@ -39,7 +39,14 @@ perl_inc () {
 
 # Get the $VERSION of a Perl CPAN module
 perl_pmver () {
-    perl -M$1 -e "print \$$1::VERSION, \"\n\""
+    # ('mversion' is provided by the Module-Version distribution)
+    hash mversion 2>&-
+
+    if (( $? == 0 )); then
+        mversion $1
+    else
+        perl -M$1 -e "print \$$1::VERSION, \"\n\""
+    fi
 }
 
 # Do a stack trace via diagnostics.pm
