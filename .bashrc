@@ -132,18 +132,4 @@ if [ -f "$dfm_bashrc_loader" ]; then
 fi
 
 # Force shell prompt to be the basic Red Hat style
-# ...plus PipTime ;)
-# http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
-hash pt 2>&- && \
-    export PROMPT_COMMAND='export PIPTIME="$(pt) "'
-## TODO Get ANSI escape sequences to work in $PS1
-## Print PipTime in color (there is a bug with 'pt -c'):
-## $ perl -MTime::PT -e "print Time::PT->new->color(q{ANSI}), qq{\033[0m}"
-#export PROMPT_COMMAND='export PIPTIME=$(perl -MTime::PT -e "print Time::PT->new->color(q{ANSI})"; echo -ne "\033[0m")'
-#export PROMPT_COMMAND='export PIPTIME=$(perl -MTime::PT -e "print Time::PT->new->color(q{ANSI})")'
-# 'pt' with ANSI color currently outputs something like...
-#[1;31mC[0;33m2[1;33mD[1;32mA[1;36mn[1;34mO[1;35mr
-# ...but needs to output -->
-#\[\e[1;31m\]C\[\e[0;33m\]2\[\e[1;33m\]D\[\e[1;32m\]A\[\e[1;36m\]n\[\e[1;34m\]O\[\e[1;35m\]r
-#export PS1='[\u@\h \[\e[32m\]\[\e[1;31m\]C\[\e[0;33m\]2\[\e[1;33m\]D\[\e[1;32m\]A\[\e[1;36m\]n\[\e[1;34m\]O\[\e[1;35m\]r\[\e[0m\] \W]\$ '
-export PS1='[\u@\h ${PIPTIME}\W]\$ '
+export PS1="[\u@\h \W]\$ "
