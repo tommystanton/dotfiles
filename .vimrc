@@ -80,7 +80,7 @@ map ,n :set invnu nu?
 
 " Insert a Perl debugger breakpoint above the current line,
 " left-justified
-map ,b O$DB::single = 1;:left$
+map ,b O$DB::single = 1;:leftj
 
 " Insert an empty Data::Dumper::Dumper(), leaving the user in INSERT
 " mode ready to type in the variable(s) for manual Perl debugging
