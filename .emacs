@@ -20,7 +20,7 @@
 (setq inhibit-splash-screen t)
 ;; Don't make backup files
 (setq make-backup-files nil)
-; no "#" files after a save
+;; no "#" files after a save
 (setq delete-auto-save-files t)
 
 ;; From Jonathan Rockway
