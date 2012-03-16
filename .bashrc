@@ -7,13 +7,16 @@ fi
 
 # User specific aliases and functions
 
-## TODO Consider http://blog.endpoint.com/2011/02/gnu-screen-sshauthsock-my-new-approach.html
-## Cache password for private key
-#if [ -z "$SSH_AUTH_SOCK" -a -x "$SSH_AGENT" ]; then
-#    eval $(/usr/bin/ssh-agent -s)
-#    /usr/bin/ssh-add
-#    trap "kill $SSH_AGENT_PID" 0
-#fi
+cache_ssh_key () {
+    # Cache password for private key
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval $(/usr/bin/ssh-agent -s)
+        /usr/bin/ssh-add "$@"
+        trap "kill $SSH_AGENT_PID" 0 && \
+            echo "ssh-agent (PID ${SSH_AGENT_PID}) will be killed" \
+                 "when this shell is exited"
+    fi
+}
 
 # Use perlbrew for a locally-installed perl (see
 # http://beta.metacpan.org/module/App::perlbrew)
