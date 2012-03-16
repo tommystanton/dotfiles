@@ -15,9 +15,6 @@ cache_ssh_key () {
         trap "kill $SSH_AGENT_PID" 0 && \
             echo "ssh-agent (PID ${SSH_AGENT_PID}) will be killed" \
                  "when this shell is exited"
-    else
-        echo "\$SSH_AUTH_SOCK already exists, exiting."
-        return 1
     fi
 }
 
