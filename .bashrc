@@ -8,14 +8,15 @@ fi
 # User specific aliases and functions
 
 cache_ssh_key () {
-    # Cache password for private key
     if [ -z "$SSH_AUTH_SOCK" ]; then
         eval $(/usr/bin/ssh-agent -s)
-        /usr/bin/ssh-add "$@"
         trap "kill $SSH_AGENT_PID" 0 && \
             echo "ssh-agent (PID ${SSH_AGENT_PID}) will be killed" \
                  "when this shell is exited"
     fi
+
+    # Cache password for private key
+    /usr/bin/ssh-add "$@"
 }
 
 # Use perlbrew for a locally-installed perl (see
