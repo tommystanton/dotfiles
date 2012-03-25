@@ -115,7 +115,8 @@ popd () {
     fi
 }
 
-pop () {
+# "Pop last"
+popl () {
     popd -0
 }
 
