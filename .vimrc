@@ -245,6 +245,30 @@ let ruby_fold=1
 set fo=tcql "format options - kept the defaults but got rid of 't', 'o' and 'r' were for automatic comment leaders
 "set tw=70 "set so that comments automatically break after 60 horizonital
 
+" == Git ==
+" Diff the current file (and view it in another instance of Vim)
+map ,gd :!git diff %
+" Commit the current file
+map ,gc :!git commit %
+
+" == Subversion ==
+" Diff the current file (and view it in another instance of Vim)
+map ,sd :!svn diff % \| vim -R -c 'set syntax=diff' -
+" Revert the current file
+map ,sr :!svn revert %
+" Commit the current file
+map ,sc :!svn commit %
+
+" == Perforce ==
+" Diff the current file
+map ,pd :!p4 diff -du % \| vim -R -c 'set syntax=diff' -
+" Open the current file for edit
+map ,pe :!p4 edit %
+" Revert the current file
+map ,pr :!p4 revert %
+" Submit the current file
+map ,ps :!p4 submit %
+
 " perltidy selected lines (or entire buffer)
 nnoremap <silent> ,pt :%!perltidy -q<Enter>
 vnoremap <silent> ,pt :!perltidy -q<Enter>
