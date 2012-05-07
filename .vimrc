@@ -269,6 +269,11 @@ map ,pr :!p4 revert %
 " Submit the current file
 map ,ps :!p4 submit %
 
+" perl(1): check the syntax of the current file
+map ,pc :!perl -c %
+" podchecker(1): check the syntax of the current file
+map ,pp :!podchecker %
+
 " perltidy selected lines (or entire buffer)
 nnoremap <silent> ,pt :%!perltidy -q<Enter>
 vnoremap <silent> ,pt :!perltidy -q<Enter>
