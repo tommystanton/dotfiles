@@ -246,7 +246,7 @@ set fo=tcql "format options - kept the defaults but got rid of 't', 'o' and 'r' 
 "set tw=70 "set so that comments automatically break after 60 horizonital
 
 " == Git ==
-" Diff the current file (and view it in another instance of Vim)
+" Diff the current file
 map ,gd :!git diff %
 " Commit the current file
 map ,gc :!git commit %
