@@ -77,6 +77,8 @@ map ,w :set invwrap wrap?
 map ,l :set invlist list?
 " Toggle line numbers
 map ,n :set invnu nu?
+" Toggle spell check
+map ,s :set invspell spell?
 
 " Insert a Perl debugger breakpoint above the current line,
 " left-justified
