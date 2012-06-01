@@ -275,6 +275,8 @@ map ,ps :!p4 submit %
 map ,pc :!perl -c %
 " podchecker(1): check the syntax of the current file
 map ,pp :!podchecker %
+" perldoc(1): view POD of the current file
+map ,pdf :!perldoc -F %
 
 " perltidy selected lines (or entire buffer)
 nnoremap <silent> ,pt :%!perltidy -q<Enter>
