@@ -252,7 +252,7 @@ set fo=tcql "format options - kept the defaults but got rid of 't', 'o' and 'r' 
 map ,gd :!git diff %
 " View commits associated with the current file
 map ,gl :!git log -p %
-" Commit the current file
+" Commit the current file (all changes!)
 map ,gc :!git commit %
 
 " == Subversion ==
