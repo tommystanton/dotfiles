@@ -2,8 +2,8 @@
 	name = Tommy Stanton
 	email = tommystanton@gmail.com
 [color]
-	branch = always
-	status = always
+	branch = auto
+	status = auto
 	diff = auto
 [color "diff"]
 	whitespace = red reverse
