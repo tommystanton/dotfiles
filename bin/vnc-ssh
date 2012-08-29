@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$@" || "$@" == *help ]]; then
+if [[ -z "$@" || "$@" == -*h* ]]; then
     cat - <<EOF
 Usage: $ vnc-ssh [SSH_OPTIONS] USER@HOST
 
