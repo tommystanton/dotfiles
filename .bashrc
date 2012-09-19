@@ -137,4 +137,5 @@ if [ -f "$dfm_bashrc_loader" ]; then
 fi
 
 # Force shell prompt to be the basic Red Hat style
+# TODO Truncate \W if it is too long
 export PS1="[\u@\h \W]\$ "
