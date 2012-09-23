@@ -149,6 +149,15 @@ if has("autocmd")
 
   augroup END
 
+  " vimdiff(1) to diff horizontally by default
+  " Should be equivalent to: $ vimdiff -o ...
+  if &diff
+    au VimEnter * windo wincmd K
+    if has("gui_running")
+      let &columns = &columns + &foldcolumn
+    endif
+  endif
+
 else                            " if no autocmd support then:
   set autoindent                " set autoindenting on
 endif " has("autocmd")
