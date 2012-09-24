@@ -256,6 +256,11 @@ let ruby_fold=1
 set fo=tcql "format options - kept the defaults but got rid of 't', 'o' and 'r' were for automatic comment leaders
 "set tw=70 "set so that comments automatically break after 60 horizonital
 
+" == Abbreviations ==
+" Create a :tabv, for viewing (not editing) in a new tab
+" (from http://vim.wikia.com/wiki/Using_tab_pages)
+cabbrev tabv tab sview +setlocal\ nomodifiable
+
 " == Git ==
 " Diff the current file
 map ,gd :!git diff %
