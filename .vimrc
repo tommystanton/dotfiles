@@ -151,6 +151,7 @@ if has("autocmd")
 
   " vimdiff(1) to diff horizontally by default
   " Should be equivalent to: $ vimdiff -o ...
+  " (from http://comments.gmane.org/gmane.editors.vim/39993)
   if &diff
     au VimEnter * windo wincmd K
     if has("gui_running")
