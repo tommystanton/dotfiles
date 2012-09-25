@@ -289,7 +289,7 @@ map ,pr :!p4 revert %
 map ,ps :!p4 submit %
 
 " perl(1): check the syntax of the current file
-map ,pc :!perl -c %
+map ,pc :!perl -Ilib -c %
 " podchecker(1): check the syntax of the current file
 map ,pp :!podchecker %
 " perldoc(1): view POD of the current file
