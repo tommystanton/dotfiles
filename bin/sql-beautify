@@ -7,9 +7,9 @@ use strict;
 use SQL::Beautify; # TODO "Fatpack" this (App::Fatpacker)
 
 local $/;
-my $sql = SQL::Beautify->new( 
-    query => <STDIN>, 
-    spaces => 4, 
-    break => "\n" 
+my $sql = SQL::Beautify->new(
+    query => <STDIN>,
+    spaces => 4,
+    break => "\n"
 );
 print $sql->beautify;
