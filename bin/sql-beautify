@@ -4,7 +4,7 @@
 # https://github.com/spazm/config/blob/master/bin/sql-beautify.pl
 use warnings;
 use strict;
-use SQL::Beautify;
+use SQL::Beautify; # TODO "Fatpack" this (App::Fatpacker)
 
 local $/;
 my $sql = SQL::Beautify->new( 
