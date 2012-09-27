@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # From Andrew Grangaard:
 # https://github.com/spazm/config/blob/master/bin/sql-beautify.pl
