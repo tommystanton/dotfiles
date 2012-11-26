@@ -9,7 +9,7 @@
 	whitespace = red reverse
 [core]
 	editor = /usr/bin/env vim
-	pager = less -FRX
+	pager = less -SRX
 [diff]
 	tool = vimdiff
 [merge]
