@@ -292,5 +292,5 @@ vnoremap <silent> ,pt :!perltidy -q<Enter>
 " Like perltidy, but for JSON (only tidies entire buffer)
 " (Requires JSON::XS)
 "nnoremap <silent> ,jt :%!json_xs -f json -t json-pretty<Enter>
-" JSON.pm alternative, based off of what json_xs would do:
-nnoremap <silent> ,jt :%!perl -MJSON -e 'local $/; binmode STDIN; $_ = <STDIN>; syswrite STDOUT, JSON->new->pretty(1)->indent_length(2)->encode(JSON->new->decode($_));'<Enter>
+" JSON::PP alternative, based off of what json_xs would do:
+nnoremap <silent> ,jt :%!perl -MJSON::PP -e 'local $/; binmode STDIN; $_ = <STDIN>; syswrite STDOUT, JSON::PP->new->pretty(1)->indent_length(2)->encode(JSON->new->decode($_));'<Enter>
