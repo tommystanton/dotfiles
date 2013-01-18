@@ -12,6 +12,7 @@
 	pager = less -SRX
 [diff]
 	tool = vimdiff
+	renames = true
 [merge]
 	tool = vimdiff
 [branch]
