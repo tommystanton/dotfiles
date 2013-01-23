@@ -57,8 +57,10 @@ set titleold=   " restore to empty string if can't restore old title
 
 " XXX There can't be comments trailing these commands, and the trailing
 " control character  (via CTRL-V CTRL-M) is necessary.
-" Find the next markup, ie. '# TODO', '//XXX', or '" FIXME'
-map ,ma /[#/"]\s*[A-Z]\{3,4\}\>
+" Find the next tag, ie. '# TODO', '//XXX', or '" FIXME'
+" See:
+" http://en.wikipedia.org/wiki/Comment_%28computer_programming%29#Tags
+map ,ma /[#/"]\s*\(TODO\\|XXX\\|FIXME\\|NOTE\)\>
 " Find the version control merge conflict lines (ie. "<<<<<<< HEAD")
 " (Hmm, the backslashes before pipes needed to be escaped here...)
 map ,me /^\(<\\|=\\|>\)\{3,\}
