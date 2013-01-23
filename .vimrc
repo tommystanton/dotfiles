@@ -58,7 +58,7 @@ set titleold=   " restore to empty string if can't restore old title
 " XXX There can't be comments trailing these commands, and the trailing
 " control character  (via CTRL-V CTRL-M) is necessary.
 " Find the next markup, ie. "# TODO" or "# XXX"
-map ,ma /# [A-Z]\{2,\}
+map ,ma /#\s*[A-Z]\{3,4\}\>
 " Find the version control merge conflict lines (ie. "<<<<<<< HEAD")
 " (Hmm, the backslashes before pipes needed to be escaped here...)
 map ,me /^\(<\\|=\\|>\)\{3,\}
