@@ -90,37 +90,11 @@ which_pkg () {
     apt-file -x search "bin/$1\$"
 }
 
-dirs () {
-    # Perl one-liner time...this was cooked up during my presentation at
-    # Los Angeles Perl Mongers on 11/4/2009.
-    builtin dirs -p | perl -pe '$_ = $. - 1 . q{ } . $_'
-}
-
-pushd () {
-    # Don't let the builtin print the builtin dirs output (but error
-    # messages via STDERR are okay)
-    builtin pushd "$@" > /dev/null
-
-    # If there was no error (and no error message)
-    if (( $? == 0 )); then
-        # Call the overridden dirs, for its pretty output
-        dirs
-    fi
-}
-
-popd () {
-    builtin popd $@ > /dev/null
-    if (( $? == 0 )); then
-        dirs
-    fi
-}
-
 # "Pop last"
+# (Use 'popd' without arguments to pop off the "top" [first] directory)
 popl () {
     popd -0
 }
-
-# (Use 'popd' without arguments to pop off the "top" [first] directory)
 
 cd () {
     builtin cd "$@" && dirs
