@@ -24,3 +24,5 @@
 	textconv = odt2txt
 [diff "doc"]
 	textconv = catdoc
+[mergetool]
+	keepBackup = false
