@@ -19,6 +19,11 @@ cache_ssh_key () {
     /usr/bin/ssh-add "$@"
 }
 
+# Use pythonbrew for a locally-installed Python
+if [ -s "$HOME/.pythonbrew/etc/bashrc" ]; then
+    source "$HOME/.pythonbrew/etc/bashrc"
+fi
+
 # Use perlbrew for a locally-installed perl (see
 # http://beta.metacpan.org/module/App::perlbrew)
 # Modules inside the chosen perl's directory in ~/perl5/perlbrew/ do not
