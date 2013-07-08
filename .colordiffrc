@@ -1,0 +1,19 @@
+# (From /usr/share/doc/colordiff/examples/colordiffrc)
+# Set banner=no to suppress authorship info at top of
+# colordiff output
+banner=no
+
+# (From /usr/share/doc/colordiff/examples/colordiffrc)
+# By default, when colordiff output is being redirected
+# to a file, it detects this and does not colour-highlight
+# To make the patch file *include* colours, change the option
+# below to 'yes'
+color_patches=no
+
+# Use same color scheme as git-diff(1)
+# See http://softwarelivre.org/terceiro/blog/a-better-svn-diff
+plain=off
+newtext=darkgreen
+oldtext=darkred
+diffstuff=white
+cvsstuff=darkyellow
