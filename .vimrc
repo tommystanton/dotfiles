@@ -270,7 +270,7 @@ map ,gc :!git commit %
 
 " == Subversion ==
 " Diff the current file (and view it in another instance of Vim)
-map ,sd :!svn diff % \| vim -R -c 'set syntax=diff' -
+map ,sd :!svn diff % \| diff-highlight \| colordiff \| less -R
 " Revert the current file
 map ,sr :!svn revert %
 " Commit the current file
@@ -278,7 +278,7 @@ map ,sc :!svn commit %
 
 " == Perforce ==
 " Diff the current file
-map ,pd :!p4 diff -du % \| vim -R -c 'set syntax=diff' -
+map ,pd :!p4 diff -du % \| diff-highlight \| colordiff \| less -R
 " Open the current file for edit
 map ,pe :!p4 edit %
 " Revert the current file
