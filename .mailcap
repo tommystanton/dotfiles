@@ -1,0 +1,8 @@
+#application/xhtml+xml; /usr/bin/elinks -force-html %s; needsterminal
+#text/html; /usr/bin/elinks -force-html %s; needsterminal
+
+text/x-diff; cat %s | diff-highlight | colordiff | less; needsterminal
+text/x-patch; cat %s | diff-highlight | colordiff | less; needsterminal
+
+# (Doesn't hurt)
+text/plain; cat %s | diff-highlight | colordiff | less; needsterminal
