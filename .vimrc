@@ -1,5 +1,11 @@
 set exrc " XXX For Vroom::Vroom (see perldoc)
 
+" Ensure that backspace key works inside of GNU screen
+if &term == "screen"
+    set t_kb=
+    fixdel
+endif
+
 set timeoutlen=250      " If a command is entered that partially-matches
                         " another command, don't wait too long
 set nofoldenable        " Turn off folding initially (can close all
