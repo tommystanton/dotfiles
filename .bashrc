@@ -19,6 +19,9 @@ cache_ssh_key () {
     /usr/bin/ssh-add "$@"
 }
 
+# For "rescreen" program
+trap "if [ -f "$HOME/.rescreen_environment" ]; then source $HOME/.rescreen_environment; fi" SIGUSR1
+
 # Use pythonbrew for a locally-installed Python
 if [ -s "$HOME/.pythonbrew/etc/bashrc" ]; then
     source "$HOME/.pythonbrew/etc/bashrc"
