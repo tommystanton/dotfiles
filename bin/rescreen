@@ -1,0 +1,65 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]; then
+    echo "Usage: rescreen sessionname"
+    exit 1
+fi
+
+SESSION=$1
+
+# list of variables to reload in screen
+VARIABLES="SSH_CLIENT
+SSH_TTY
+SSH_AUTH_SOCK
+SSH_CONNECTION
+DISPLAY"
+
+OUTPUT="$HOME/.rescreen_environment"
+HANDLER='trap "if [ -f "$HOME/.rescreen_environment" ]; then source $HOME/.rescreen_environment; fi" SIGUSR1'
+
+# search bashrc for signal handler
+if ! grep -q "SIGUSR1" "$HOME/.bashrc"; then
+    echo "You must have the following in your .bashrc file for rescreen to work"
+    echo $HANDLER
+    exit 1 
+fi
+
+# format is pid.name
+PID_AND_NAME=$(screen -list | awk "/$SESSION/ {print \$1}")
+if [ -z "$PID_AND_NAME" ]; then
+    echo "There is no screen to be resumed matching $SESSION."
+    exit 1
+fi
+# remove longest match from end
+PID=${PID_AND_NAME%%.$SESSION}
+
+if [ -f "$OUTPUT" ]; then
+    rm $OUTPUT
+fi
+
+for NAME in $VARIABLES; do
+    VALUE=$(eval "echo \$$NAME")
+    if [ -n "$VALUE" ]; then
+        # set variable in screen so will be inherited by future shells
+        screen -S $SESSION -X setenv $NAME $VALUE
+        # build file for existing shells to source
+        echo "export $NAME='$VALUE'" >> $OUTPUT
+    fi
+done
+
+for CHILD_PID in $(ps --ppid $PID -o 'pid='); do
+    CHILD_CMD=$(ps --pid $CHILD_PID -o 'cmd=')
+    if [ "$CHILD_CMD" = '/bin/bash' ]; then
+        # trigger our signal handler in the shell
+        kill -USR1 $CHILD_PID
+    fi
+    if ! ps --pid $CHILD_PID > /dev/null; then
+        echo "Your shell seems to have died. Aborting!"
+        echo "Did you add the following to your .bashrc file?"
+        echo $HANDLER
+        exit 2
+    fi
+    
+done
+
+screen -r $SESSION
