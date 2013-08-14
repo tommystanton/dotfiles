@@ -1,1 +1,4 @@
 *.sw?
+
+# Temporary Vim files
+.vim/.netrwhist
