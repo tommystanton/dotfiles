@@ -51,6 +51,11 @@ if [ -d "$HOME/opt/local/pinto" ]; then
     fi
 fi
 
+# Vert.x development: http://vertx.io/install.html
+if [ -d "$HOME/opt/local/vert.x" ]; then
+    PATH="$HOME/opt/local/vert.x/bin:$PATH"
+fi
+
 # ex. Do 'perl_inc -Mlib::core::only' to see how @INC is affected
 perl_inc () {
     perl $1 -e 'for (@INC) { print "$_\n"; }'
@@ -128,3 +133,5 @@ fi
 # Force shell prompt to be the basic Red Hat style
 # TODO Truncate \W if it is too long
 export PS1="[\u@\h \W]\$ "
+
+export PATH
