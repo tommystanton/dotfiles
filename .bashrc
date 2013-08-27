@@ -44,6 +44,13 @@ if [ -d "$HOME/perl5/lib/perl5" ]; then
     fi
 fi
 
+if [ -d "$HOME/opt/local/pinto" ]; then
+    if [[ "$(which perl)" == */perl-5.18.0/* ]]; then
+        source "$HOME/opt/local/pinto/etc/bashrc"
+        export PINTO_REPOSITORY_ROOT="$HOME/perl5/perlbrew/perls/perl-5.18.0/pinto/"
+    fi
+fi
+
 # ex. Do 'perl_inc -Mlib::core::only' to see how @INC is affected
 perl_inc () {
     perl $1 -e 'for (@INC) { print "$_\n"; }'
