@@ -214,15 +214,6 @@ set virtualedit=block
 " Make BS/DEL work as expected in visual modes
 vmap <BS> x
 
-
-"===== set file types =====
-"
-" Teach vim that .t files are perl files (ie tests)
-au BufRead,BufNewFile *.t   set filetype=perl
-au BufRead,BufNewFile *.plx set filetype=perl
-au BufRead,BufNewFile *.json set filetype=javascript
-
-
 set autoindent
 
 "set cindent
@@ -254,6 +245,12 @@ let ruby_fold=1
 
 set fo=tcql "format options - kept the defaults but got rid of 't', 'o' and 'r' were for automatic comment leaders
 "set tw=70 "set so that comments automatically break after 60 horizonital
+
+"== File types ==
+
+au BufRead,BufNewFile *.t   set filetype=perl
+au BufRead,BufNewFile *.plx set filetype=perl
+au BufRead,BufNewFile *.json set filetype=javascript
 
 " == Abbreviations ==
 " Create a :tabv, for viewing (not editing) in a new tab
