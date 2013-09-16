@@ -252,6 +252,10 @@ au BufRead,BufNewFile *.t   set filetype=perl
 au BufRead,BufNewFile *.plx set filetype=perl
 au BufRead,BufNewFile *.json set filetype=javascript
 
+autocmd FileType perl setlocal softtabstop=4 shiftwidth=4
+autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
+autocmd FileType sh setlocal softtabstop=2 shiftwidth=2
+
 " == Abbreviations ==
 " Create a :tabv, for viewing (not editing) in a new tab
 " (from http://vim.wikia.com/wiki/Using_tab_pages)
