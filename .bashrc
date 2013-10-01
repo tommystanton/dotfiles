@@ -78,6 +78,30 @@ perl_trace () {
     perl -Mdiagnostics=-traceonly $@
 }
 
+# TODO Move json_* functions into their own shell/Perl scripts in ~/bin/
+
+# Usage:
+# $ echo '["red","green","blue"]' | json_diffable
+# Example--diffing Mozilla session stores:
+# $ vimdiff -Ro \
+# <(json_diffable < sessionstore.js.bak20130903) \
+# <(json_diffable < sessionstore.js.bak20131001)
+json_diffable () {
+  perl -MJSON::Diffable=encode_json,decode_json \
+    -e 'local $/; binmode STDIN; $_ = <STDIN>;' \
+    -e 'syswrite STDOUT, encode_json(decode_json($_));'
+}
+
+# Usage:
+# $ echo '["red","green","blue"]' | json_tidy
+json_tidy () {
+  perl -MJSON::PP \
+  -e 'local $/; binmode STDIN; $_ = <STDIN>;' \
+  -e 'syswrite STDOUT, JSON::PP->new' \
+  -e '->pretty(1)->indent_length(2)' \
+  -e '->encode(JSON::PP->new->decode($_));'
+}
+
 alias grep='grep --color' # Highlight the search for grep in red
 
 # Shell variable used by less(1), for configuration
