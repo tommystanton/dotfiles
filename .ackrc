@@ -2,3 +2,6 @@
 
 # Mason template files should be considered as Perl files
 --type-add=perl=.mason
+
+# Ignore locally-installed modules in a Node.js project
+--ignore-dir=node_modules
