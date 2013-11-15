@@ -264,6 +264,7 @@ cabbrev tabv tab sview +setlocal\ nomodifiable
 " == Git ==
 " Diff the current file
 map ,gd :!git diff %
+map ,gdw :!git diff -w %
 " View commits associated with the current file
 map ,gl :!git log -p %
 " Commit the current file (all changes!)
