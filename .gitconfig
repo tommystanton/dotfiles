@@ -20,6 +20,8 @@
 [alias]
 	l = log --pretty=oneline --abbrev-commit
 	ls = ls-tree --name-only -r HEAD
+[diff "tar"]
+	textconv = tar ft
 [diff "odf"]
 	textconv = odt2txt
 [diff "doc"]
