@@ -1,3 +1,4 @@
 screen -t bash 0
 screen -t man 1
 screen -t edit 2
+screen -t dev 3
