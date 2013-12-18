@@ -51,6 +51,14 @@ if [ -d "$HOME/opt/local/pinto" ]; then
     fi
 fi
 
+# Node.js: allow "global" install of modules in $HOME
+# http://stackoverflow.com/a/13021677/1265245
+NPM_PACKAGES="$HOME/.npm-packages"
+if [ -d "$NPM_PACKAGES" ]; then
+    PATH="$NPM_PACKAGES/bin:$PATH"
+    export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+fi
+
 # Vert.x development: http://vertx.io/install.html
 if [ -d "$HOME/opt/local/vert.x" ]; then
     PATH="$HOME/opt/local/vert.x/bin:$PATH"
