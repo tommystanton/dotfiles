@@ -14,7 +14,7 @@
 	tool = vimdiff
 	renames = true
 [merge]
-	tool = vimdiff
+	tool = diffconflicts
 [branch]
 	autosetupmerge = true
 [alias]
@@ -32,3 +32,7 @@
 	log = diff-highlight | less
 	show = diff-highlight | less
 	diff = diff-highlight | less
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
