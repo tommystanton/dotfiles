@@ -22,13 +22,6 @@ cache_ssh_key () {
 # For "rescreen" program
 trap "if [ -f "$HOME/.rescreen_environment" ]; then source $HOME/.rescreen_environment; fi" SIGUSR1
 
-# ndenv - a Node.js version manager
-# https://github.com/riywo/ndenv
-if [ -d "$HOME/.ndenv" ]; then
-    PATH="$HOME/.ndenv/bin:$PATH"
-    eval "$(ndenv init -)"
-fi
-
 # Use pythonbrew for a locally-installed Python
 if [ -s "$HOME/.pythonbrew/etc/bashrc" ]; then
     source "$HOME/.pythonbrew/etc/bashrc"
