@@ -91,6 +91,8 @@ map ,s :set invspell spell?
 " Insert a Perl debugger breakpoint above the current line,
 " left-justified
 map ,bp O$DB::single = 1;:leftj
+" ...or a Node.js debugger breakpoint
+map ,bn Odebugger;:leftj
 
 " Insert an empty Data::Dumper::Dumper(), leaving the user in INSERT
 " mode ready to type in the variable(s) for manual Perl debugging
