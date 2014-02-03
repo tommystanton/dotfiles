@@ -20,6 +20,8 @@
 [alias]
 	l = log --pretty=oneline --abbrev-commit
 	ls = ls-tree --name-only -r HEAD
+[diff "json"]
+	textconv = json-diffable <
 [diff "tar"]
 	textconv = tar ft
 [diff "odf"]
