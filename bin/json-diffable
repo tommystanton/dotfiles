@@ -1,0 +1,18 @@
+#!/usr/bin/env perl
+
+# TODO Write Pod for documentation instead of in-line comments
+
+# Usage:
+# $ echo '["red","green","blue"]' | json_diffable
+# Example--diffing Mozilla session stores:
+# $ vimdiff -Ro \
+# <(json_diffable < sessionstore.js.bak20130903) \
+# <(json_diffable < sessionstore.js.bak20131001)
+
+use JSON::Diffable qw( encode_json decode_json );
+
+local $/;
+binmode STDIN;
+
+$_ = <STDIN>;
+syswrite STDOUT, encode_json(decode_json($_));
