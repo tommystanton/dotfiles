@@ -304,6 +304,9 @@ vnoremap <silent> ,pt :!perltidy -q<Enter>
 " Like perltidy, but for JSON (only tidies entire buffer)
 nnoremap <silent> ,jt :%!perl -MJSON::PP -e 'local $/; binmode STDIN; $_ = <STDIN>; syswrite STDOUT, JSON::PP->new->pretty(1)->indent_length(2)->encode(JSON::PP->new->decode($_));'<Enter>
 
+"...or using jsonlint (npm module)
+nnoremap <silent> ,jtt :%!jsonlint<Enter>
+
 " Disable one diff window during a three-way diff allowing you to cut out the
 " noise of a three-way diff and focus on just the changes between two versions
 " at a time. Inspired by Steve Losh's Splice
