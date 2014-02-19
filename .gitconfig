@@ -10,6 +10,7 @@
 [core]
 	editor = /usr/bin/env vim
 	pager = less -SRX
+	attributesfile = ~/.gitattributes
 [diff]
 	tool = vimdiff
 	renames = true

@@ -1,0 +1,5 @@
+*.json diff=json
+*.tar diff=tar
+
+*.odt diff=odf
+*.doc diff=doc
