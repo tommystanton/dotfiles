@@ -273,7 +273,7 @@ map ,gl :!git log -p %
 map ,gc :!git commit %
 
 " == Subversion ==
-" Diff the current file (and view it in another instance of Vim)
+" Diff the current file
 map ,sd :!svn diff % \| diff-highlight \| colordiff \| less -R
 " Revert the current file
 map ,sr :!svn revert %
