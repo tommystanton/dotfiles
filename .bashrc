@@ -59,6 +59,12 @@ if [ -d "$NPM_PACKAGES" ]; then
     export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 fi
 
+# If using nave (https://github.com/isaacs/nave), consider its
+# globally-installed npm modules as well
+if [ -z "$NAVEPATH" ]; then
+    PATH="$NAVEPATH:$PATH"
+fi
+
 # Vert.x development: http://vertx.io/install.html
 if [ -d "$HOME/opt/local/vert.x" ]; then
     PATH="$HOME/opt/local/vert.x/bin:$PATH"
