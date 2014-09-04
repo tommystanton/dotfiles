@@ -14,11 +14,15 @@ call vundle#begin()
 
 """ BEGIN Vundle plugins
 Plugin 'gmarik/Vundle.vim' " (required)
+Plugin 'Valloric/YouCompleteMe'
 """ END Vundle plugins
 
 call vundle#end()
 filetype plugin indent on
 """ END Vundle-required config
+
+" eclim + YouCompleteMe: http://eclim.org/vim/code_completion.html
+let g:EclimCompletionMethod = 'omnifunc'
 
 set timeoutlen=250      " If a command is entered that partially-matches
                         " another command, don't wait too long
