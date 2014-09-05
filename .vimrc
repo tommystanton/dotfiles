@@ -22,6 +22,7 @@ call vundle#begin()
 """ BEGIN Vundle plugins
 Plugin 'gmarik/Vundle.vim' " (required)
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/Gundo'
 """ END Vundle plugins
 
 call vundle#end()
