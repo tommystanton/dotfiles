@@ -1,5 +1,12 @@
 set exrc " XXX For Vroom::Vroom (see perldoc)
 
+" Discourage (and disable) use of arrow keys
+" https://github.com/luciano-fiandesio/dotfiles/blob/108019f7f700a45d1ceea89105436a429c45e411/.vimrc#L61
+nnoremap <Left> :echoe "Use \"h\", please :)"<CR>
+nnoremap <Right> :echoe "Use \"l\", please :)"<CR>
+nnoremap <Up> :echoe "Use \"k\", please :)"<CR>
+nnoremap <Down> :echoe "Use \"j\", please :)"<CR>
+
 " Ensure that backspace key works inside of GNU screen
 if &term == "screen"
     set t_kb=
