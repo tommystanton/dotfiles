@@ -6,12 +6,25 @@ if &term == "screen"
     fixdel
 endif
 
+""" BEGIN Vundle-required config
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+""" BEGIN Vundle plugins
+Plugin 'gmarik/Vundle.vim' " (required)
+""" END Vundle plugins
+
+call vundle#end()
+filetype plugin indent on
+""" END Vundle-required config
+
 set timeoutlen=250      " If a command is entered that partially-matches
                         " another command, don't wait too long
 set nofoldenable        " Turn off folding initially (can close all
                         " folds, if  desired, via zM)
 set background=dark     " My terminals have black backgrounds
-set nocompatible        " Set this first
 set modeline            " Allows vim commmands to be placed at top/bottom the file
 set hidden              " Allow change of buffer when multiple files loaded and modified
 set scrolloff=2         " Always keep some lines below/above the cursor visible

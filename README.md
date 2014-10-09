@@ -23,6 +23,12 @@ Finally, to install your dotfiles onto a new system:
     $ git clone git@github.com:username/dotfiles.git .dotfiles
     $ ./.dotfiles/bin/dfm  # creates symlinks to install files
 
+...and for this __tstanton__-specific setup:
+
+    $ ./.dotfiles/bin/dfm submodule init
+    $ ./.dotfiles/bin/dfm submodule update
+    $ vim +PluginInstall +qall
+
 ## Full documentation
 
 For more information, check out the [wiki](http://github.com/justone/dotfiles/wiki).

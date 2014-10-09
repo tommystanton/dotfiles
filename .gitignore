@@ -2,3 +2,6 @@
 
 # Temporary Vim files
 .vim/.netrwhist
+
+# Vim: Vundle-installed plugin-ins
+.vim/bundle/
