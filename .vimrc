@@ -23,11 +23,15 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " (required)
 Plugin 'vim-scripts/Gundo'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'kien/rainbow_parentheses.vim'
 """ END Vundle plugins
 
 call vundle#end()
 filetype plugin indent on
 """ END Vundle-required config
+
+
+au VimEnter * RainbowParenthesesToggle
 
 set timeoutlen=250      " If a command is entered that partially-matches
                         " another command, don't wait too long
