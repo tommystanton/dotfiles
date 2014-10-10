@@ -22,6 +22,7 @@ call vundle#begin()
 """ BEGIN Vundle plugins
 Plugin 'gmarik/Vundle.vim' " (required)
 Plugin 'vim-scripts/Gundo'
+Bundle 'derekwyatt/vim-scala'
 """ END Vundle plugins
 
 call vundle#end()
