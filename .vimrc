@@ -22,7 +22,6 @@ call vundle#begin()
 """ BEGIN Vundle plugins
 Plugin 'gmarik/Vundle.vim' " (required)
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/Gundo'
 """ END Vundle plugins
 
@@ -32,9 +31,6 @@ filetype plugin indent on
 
 " eclim + YouCompleteMe: http://eclim.org/vim/code_completion.html
 let g:EclimCompletionMethod = 'omnifunc'
-
-" (Better for Java programming)
-let delimitMate_expand_cr = 1
 
 set timeoutlen=250      " If a command is entered that partially-matches
                         " another command, don't wait too long
