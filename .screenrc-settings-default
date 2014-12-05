@@ -11,6 +11,8 @@ defscrollback 5000
 autodetach on
 logfile "$HOME/var/log/screen/%Y%m%d-%t"
 
-# Based on: http://superuser.com/a/51995
+# This is a mix between:
+# - http://magazine.redhat.com/2007/09/27/a-guide-to-gnu-screen/
+# - http://superuser.com/a/51995
 # See also: http://www.kilobitspersecond.com/2014/02/10/understanding-gnu-screens-hardstatus-strings/
-hardstatus alwayslastline "%{b kw} %{-b kw}%u %-Lw%{= mW}%50> %n%f %t %{-}%+Lw%<"
+hardstatus alwayslastline "%{= kG}[ %{G}%H %{g}][ %{b kw} %{-b kw}%u %-Lw%{= mW}%50> %n%f %t %{-}%+Lw%<%= %{g}][%{B} %Y%m%d %{W}%c %{g}]"
