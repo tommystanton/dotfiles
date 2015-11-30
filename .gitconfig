@@ -20,7 +20,7 @@
 	autosetupmerge = true
 [alias]
 	l = log --pretty=oneline --abbrev-commit
-	ls = ls-tree --name-only -r HEAD
+	ls = ls-tree --name-only -r
 [diff "json"]
 	textconv = json-diffable <
 [diff "tar"]
