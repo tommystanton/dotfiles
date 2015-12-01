@@ -5,3 +5,6 @@
 
 # Ignore locally-installed modules in a Node.js project
 --ignore-dir=node_modules
+
+# Generated Java sources, classes, etc
+--ignore-dir=target
