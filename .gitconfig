@@ -27,6 +27,7 @@
 	l-np = !git l origin/$(git rev-parse --abbrev-ref HEAD)..
 	log-fb = !git log origin/master..
 	log-np = !git log origin/$(git rev-parse --abbrev-ref HEAD)..
+	rebase-fb = !git rebase -i $(git merge-base origin/master HEAD)
 [diff "json"]
 	textconv = json-diffable <
 [diff "tar"]
