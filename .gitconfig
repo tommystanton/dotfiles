@@ -21,6 +21,12 @@
 [alias]
 	l = log --pretty=oneline --abbrev-commit
 	ls = ls-tree --name-only -r
+	# 'fb': "feature branch"
+	# 'np': "not pushed"
+	l-fb = !git l origin/master..
+	l-np = !git l origin/$(git rev-parse --abbrev-ref HEAD)..
+	log-fb = !git log origin/master..
+	log-np = !git log origin/$(git rev-parse --abbrev-ref HEAD)..
 [diff "json"]
 	textconv = json-diffable <
 [diff "tar"]
