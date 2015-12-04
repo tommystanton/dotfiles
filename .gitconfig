@@ -25,6 +25,7 @@
 	ls = ls-tree --name-only -r
 	# 'fb': "feature branch"
 	# 'np': "not pushed"
+	diff-fb = !git diff origin/master...
 	l-fb = !git l origin/master..
 	l-np = !git l origin/$(git current-branch)..
 	log-fb = !git log origin/master..
