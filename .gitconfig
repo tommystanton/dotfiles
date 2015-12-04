@@ -19,15 +19,17 @@
 [branch]
 	autosetupmerge = true
 [alias]
+	current-branch = rev-parse --abbrev-ref HEAD
+	cut-from = merge-base origin/master HEAD
 	l = log --pretty=oneline --abbrev-commit
 	ls = ls-tree --name-only -r
 	# 'fb': "feature branch"
 	# 'np': "not pushed"
 	l-fb = !git l origin/master..
-	l-np = !git l origin/$(git rev-parse --abbrev-ref HEAD)..
+	l-np = !git l origin/$(git current-branch)..
 	log-fb = !git log origin/master..
-	log-np = !git log origin/$(git rev-parse --abbrev-ref HEAD)..
-	rebase-fb = !git rebase -i $(git merge-base origin/master HEAD)
+	log-np = !git log origin/$(git current-branch)..
+	rebase-fb = !git rebase -i $(git cut-from)
 [diff "json"]
 	textconv = json-diffable <
 [diff "tar"]
