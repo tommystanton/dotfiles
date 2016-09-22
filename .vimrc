@@ -288,6 +288,7 @@ autocmd FileType java setlocal softtabstop=4 shiftwidth=4
 autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
 autocmd FileType markdown setlocal softtabstop=4 shiftwidth=4
 autocmd FileType sh setlocal softtabstop=2 shiftwidth=2
+autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
 
 " == Abbreviations ==
 " Create a :tabv, for viewing (not editing) in a new tab
