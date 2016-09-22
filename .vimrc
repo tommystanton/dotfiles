@@ -284,6 +284,7 @@ au BufRead,BufNewFile *.json set filetype=javascript
 au BufRead,BufNewFile *.md set filetype=markdown
 
 autocmd FileType perl setlocal softtabstop=4 shiftwidth=4
+autocmd FileType java setlocal softtabstop=4 shiftwidth=4
 autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
 autocmd FileType markdown setlocal softtabstop=4 shiftwidth=4
 autocmd FileType sh setlocal softtabstop=2 shiftwidth=2
