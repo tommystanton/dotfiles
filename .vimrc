@@ -339,6 +339,10 @@ nnoremap <silent> ,jt :%!perl -MJSON::PP -e 'local $/; binmode STDIN; $_ = <STDI
 "...or using jsonlint (npm module)
 nnoremap <silent> ,jtt :%!jsonlint<Enter>
 
+" Like perltidy, but for XML...
+nnoremap <silent> ,xt :%!xmllint --format -<Enter>
+vnoremap <silent> ,xt :!xmllint --format -<Enter>
+
 " Disable one diff window during a three-way diff allowing you to cut out the
 " noise of a three-way diff and focus on just the changes between two versions
 " at a time. Inspired by Steve Losh's Splice
