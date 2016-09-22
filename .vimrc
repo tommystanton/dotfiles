@@ -23,15 +23,17 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " (required)
 Plugin 'vim-scripts/Gundo'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'eiiches/vim-rainbowbrackets'
 """ END Vundle plugins
 
 call vundle#end()
 filetype plugin indent on
 """ END Vundle-required config
 
-
-au VimEnter * RainbowParenthesesToggle
+let g:rainbowbrackets_enable_round_brackets = 1
+let g:rainbowbrackets_enable_curly_brackets = 1
+let g:rainbowbrackets_enable_square_brackets = 1
+let g:rainbowbrackets_enable_angle_brackets = 0
 
 set timeoutlen=250      " If a command is entered that partially-matches
                         " another command, don't wait too long
