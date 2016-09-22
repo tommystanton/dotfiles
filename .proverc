@@ -1,4 +1,3 @@
-# Show tests individually
--v
+--failures
 # Make sure STDERR and STDOUT are printed in the correct order
 --merge
