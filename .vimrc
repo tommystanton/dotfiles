@@ -262,7 +262,6 @@ set shiftround " Indent/outdent (via <,>) to nearest shiftwidth
 set secure
 set textwidth=72 " Use the traditional textwidth
 set number " Show line numbers
-set list " Draw little $'s to show where lines end...now I can see EVERYTHING!
 set wrap! " Turn off word wrap
 set lbr " Have the word-wrapping NOT split up sequential characters
 set ruler " Show the line and column number of the cursor position
