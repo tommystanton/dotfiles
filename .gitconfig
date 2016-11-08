@@ -34,6 +34,8 @@
 	log-fb = !git log origin/master..
 	log-np = !git log origin/$(git current-branch)..
 	rebase-fb = !git rebase -i $(git cut-from)
+	# 'gl': GitLab
+	ci-gl-wiki = commit --allow-empty-message -m ''
 [diff "json"]
 	textconv = json-diffable <
 [diff "tar"]
