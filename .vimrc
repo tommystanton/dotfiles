@@ -22,6 +22,7 @@ call vundle#begin()
 """ BEGIN Vundle plugins
 Plugin 'gmarik/Vundle.vim' " (required)
 Plugin 'vim-scripts/Gundo'
+Plugin 'hynek/vim-python-pep8-indent'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'eiiches/vim-rainbowbrackets'
 """ END Vundle plugins
