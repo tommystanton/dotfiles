@@ -15,4 +15,4 @@ logfile "$HOME/var/log/screen/%Y%m%d-%t"
 # - http://magazine.redhat.com/2007/09/27/a-guide-to-gnu-screen/
 # - http://superuser.com/a/51995
 # See also: http://www.kilobitspersecond.com/2014/02/10/understanding-gnu-screens-hardstatus-strings/
-hardstatus alwayslastline "%{= kG}[ %{G}%H %{g}][ %{b kw} %{-b kw}%u %-Lw%{= mW}%50> %n%f %t %{-}%+Lw%<%= %{g}][%{B} %Y%m%d %{W}%c %{g}]"
+hardstatus alwayslastline "%{= kG}[ %{G}%H %{g}][ %{b kw} %{-b kw}%u %-Lw%{= mW}%50> %n%f %t %{-}%+Lw%<%= %{g}][%{B} %Y-%m-%d%{R}T%{W}%c %{g}]"
