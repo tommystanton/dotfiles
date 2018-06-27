@@ -36,6 +36,12 @@ if [ -f "$perlbrew_bashrc" ]; then
     source "$perlbrew_bashrc"
 fi
 
+# Use the Perl 6 installed via nxadm/rakudo-pkg
+if [ -d "/opt/rakudo-pkg/bin" ]; then
+    PATH="/opt/rakudo-pkg/bin:$PATH"
+    PATH="$HOME/.perl6/bin:$PATH"
+fi
+
 # Use rakudobrew for a locally-installed Perl 6
 if [ -d "$HOME/.rakudobrew" ]; then
     PATH="$HOME/.rakudobrew/bin:$PATH"
