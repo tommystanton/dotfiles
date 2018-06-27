@@ -14,3 +14,5 @@ for interpreter in perl python; do
     fi;
 done
 export PATH
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
