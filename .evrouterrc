@@ -1,0 +1,4 @@
+Window ""
+"Griffin PowerMate" "" any key/256 "XButton/2"  # click
+"Griffin PowerMate" "" any rel/7/1 "XButton/5"  # scroll >
+"Griffin PowerMate" "" any rel/7/-1 "XButton/4" # scroll <
