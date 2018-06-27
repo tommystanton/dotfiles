@@ -23,7 +23,7 @@
 [alias]
 	current-branch = rev-parse --abbrev-ref HEAD
 	cut-from = merge-base origin/master HEAD
-	l = log --pretty=oneline --abbrev-commit
+	l = log --no-decorate --pretty=oneline --abbrev-commit
 	lst = ls-tree --name-only -r
 	lsc = diff --name-only --diff-filter=U
 	# 'fb': "feature branch"
